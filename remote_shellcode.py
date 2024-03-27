@@ -1,7 +1,3 @@
-# To set up the listener on the victim machine
-# coproc ./itc_app
-# nc -lvnkp 9000 <&"${COPROC[0]}" >&"${COPROC[1]}"
-
 from pwn import *
 import os
 context.log_level = 'info'
